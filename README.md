@@ -50,5 +50,20 @@ Optimizer and loss function.
 The optimizer selected was Adam since it is the most common one.
 Loss function: Binary crossentropy loss: The loss selected was based on the fact that the target variable is a binary value so based on the input it will output either a 1 or 0 by using the sigmoid activation function. [BCE](https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html)
 
+Metrics: The metric selected was F1 score, the reason to use that one is because in a bianry classifier is important to know how many entries were missclassified (combining precision and recall). Also for visual purposes a confusion matrix is displayed at the end of the titanic notebook.
+
+Results:
+- Random forest F1_score:0.810126582278481 
+- Xgboost: F1_score:0.8157894736842105
+- Neural network:  0.7251
+
+These results are as expected since neural networks should not be the first option while dealing with tabular data.
+Neural networks should be used in problems that required unstructured data such as images or text.
+
+### House Price Methods
+In this notebook fast ai was used to train a regressor model.
+See the notebook to see the details, but the architecture of the model was based on the fas ai tutorials [Fastai](https://docs.fast.ai/44_tutorial.tabular.html)
+
+But as the previous titanic model, the results were not better than using traditional ml approaches in sklearn.
 
 
