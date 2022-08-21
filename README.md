@@ -1,25 +1,35 @@
 # CodingNomads Deep Learning Project 1: Fundamentals
+## Problem statement
+Two datasets are used for learning purposes on this repository: Titanic dataset to understand the basics of pytorch and neural networks and House Prices to understand how to use fast ai.
+The objective of the titanic dataset is to determine if some passangers survided or not given different features such as class, number of partners in the ship, etc.
+The objective of the House Price dataset is to determine the price of houses given general information such as location, size, etc (More of the datasets in Data folder).
 
-The purpose of this project is to practice some of the skills you've learned in the **Fundamentals** module, including loading data and training and evaluating an ML model using `torch`.
-Although deep learning should not be your first approach when working with tabular data, it's a natural transition from the DS/ML course.
+## Data
+### Titanic dataset
+The original dataset can be found at: [Kaggle](https://www.kaggle.com/competitions/titanic/data)
+It consist on a practice dataset to study and get comfortable applying ml algorithms. The data has 9 features and a target.
+The features are divided as follows:
+survival: Target variable, Binary output (1 or 0)
 
-Why shouldn't DL be your first approach? [This paper](https://arxiv.org/pdf/2110.01889.pdf) compares many methods on the `adult` dataset, a cannonical tabular dataset.
-The figure below from the paper compares many methods on tabular data, and frameworks like [XGBoost](https://xgboost.readthedocs.io/en/stable/), [catboost](https://catboost.ai/), and even `sklearn`'s Random Forest demonstrate great results.
+Continuous features:
+- Age
+- Fare
+- Cabin
+- -Ticket number
+- pach
+- sibsp
 
-<a>
-    <img
-         class="img-responsive" 
-         src="https://github.com/CodingNomads/static/blob/main/DSML/deep_learning/snapshots/xgboost_dl_tabular.png?raw=true"
-     />
-</a>
+Categorical feature:
+- Pclass (Ordinal feature)
+- Sex
+- embarked
 
-\- [Deep Neural Networks and Tabular Data: A Survey](https://arxiv.org/pdf/2110.01889.pdf)
+The dataset was relatively simple.Some feature engineering was required to handle the categorical data, some entries were missing but the process to leave the data ready for a model was not complicated.
 
-Kaggle Grandmaster Bojan Tunguz has some great advice on how to approach tabular data problems:
+### House Price dataset
+This dataset can be found at: [Kaggle](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data?select=train.csv)
+This dataset is more complex since it has more features (categorical and continuous).
+A detailed explanaion can be found in the data_description.txt file at the data section of this repository.
+The data required a lot of feature engineering. Missing entries and some columns highly imbalanced were found.
 
-> My first “serious” steps in a competition involve some light EDA and building a simple first model or two, usually just a simple XGBoost, LightGBM, or both.
 
-\- [Interview with Kaggle GrandMaster, Data Scientist: Dr. Bojan Tunguz](https://medium.com/dsnet/interview-with-kaggle-grandmaster-dr-bojan-tunguz-726b28e601e)
-
-In the spirit of this advice, you will load and split your data, do some EDA, train a non-deep learning model, and train a deep learning model.
-Finally, you will write a report describing your model selection process and performance on your test dataset.
