@@ -32,4 +32,23 @@ This dataset is more complex since it has more features (categorical and continu
 A detailed explanaion can be found in the data_description.txt file at the data section of this repository.
 The data required a lot of feature engineering. Missing entries and some columns highly imbalanced were found.
 
+The different methods used to handle that can be found on the respective notebooks.
+
+## Methods
+
+In order to train the ml models, the given data was splitted using this sklearn method [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html). At the end a 90% was used for training and 10% for validation.
+
+### Feature engineering Titanic: 
+Before feeding the neural network, all the categorical variables were transformed into one hot vectors.
+For missing entries the fill method used was the replacing them with the most common value of that column (mode).
+The model trained were Random forest and XgboostClassifier and a simple neural network.
+
+A grid search was implemented to find the best params for the random forest,
+Not much hyperparameters were tuned in the Xgboost model.
+
+Optimizer and loss function.
+The optimizer selected was Adam since it is the most common one.
+Loss function: Binary crossentropy loss: The loss selected was based on the fact that the target variable is a binary value so based on the input it will output either a 1 or 0 by using the sigmoid activation function. [BCE](https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html)
+
+
 
